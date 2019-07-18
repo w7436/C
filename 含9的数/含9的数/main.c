@@ -4,7 +4,10 @@
 int main() {
 	int count=0;
 	for (int n = 1; n <= 100;n++) {
-		if ((n%10==9)||(n/10==9)) {
+		if (n%10==9) {
+			count++;
+		}
+		if ((n / 10 == 9)) {
 			count++;
 		}
 	}
