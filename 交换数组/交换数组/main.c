@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include <stdlib.h>
+
 int main() {
 	int j = 0, t = 0;
 	int a[10] = { 1,2,3,4,5,6,7,8,9,0 };
@@ -18,6 +18,6 @@ int main() {
 		printf("%2d", b[j]);
 	}
 	printf("\n");
-	system("pause");
+
 	return 0;
 }
