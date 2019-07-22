@@ -8,11 +8,11 @@ int main() {
 		scanf("%c", &m);
 		if (m >= 65 && m <= 90) {
 			m = m + 32;
-			printf("%c\n", m);
+			printf("%c", m);
 		}
 		else if (m >= 97 && m <= 122) {
 			m = m - 32;
-			printf("%c\n", m);
+			printf("%c", m);
 		}
 	}
 	system("pause");
