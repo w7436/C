@@ -9,7 +9,7 @@ void BinarySearch(int arr[], int right, int result) {
 			middle = (middle + right)/2;
 			continue;
 		}
-		if (arr[middle] >=result) {
+		if (arr[middle] >=result) {  //´Ó×ó±ßÕÒ
 			middle =( middle + left)/2;
 			continue;
 		}
