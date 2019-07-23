@@ -3,22 +3,17 @@
 #include <string.h>
 int BinarySearch(int arr[], int right, int result) {
 	int  left = 0;
-	int middle = (left + right) / 2;
-	while (right - left > 1) {
-		if (arr[middle] < result) {    //´ÓÓÒ±ßÕÒ
-			left = middle;
-			middle = (left +right) / 2;
+	while ( left<=right) {
+		int mid = (left + right) / 2;
+		if (arr[mid] < result) {    //´ÓÓÒ±ßÕÒ
+			left = mid+1;
 		}
-		if (arr[middle] > result) {  //´Ó×ó±ßÕÒ
-			right = middle;
-			middle = (right + left)/2;
+		if (arr[mid] > result) {  //´Ó×ó±ßÕÒ
+			right = mid-1;
 		}
-		if (arr[middle] == result)
-			break;
+		if (arr[mid] == result)
+			return mid;
 	}
-	if (arr[middle] == result)
-		return middle;
-	else
 		return -1;
 }
 int main() {
@@ -30,5 +25,4 @@ int main() {
 	m=BinarySearch(arr, right, result);
 	printf("%d\n", m);
 	return 0;
-	
 }
