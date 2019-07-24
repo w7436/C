@@ -10,7 +10,7 @@ int main() {
 			m = m + 32;
 			printf("%c", m);
 		}
-		else if (m >= 97 && m <= 122) {
+		else (m >= 97 && m <= 122) {
 			m = m - 32;
 			printf("%c", m);
 		}
