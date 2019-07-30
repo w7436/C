@@ -13,6 +13,7 @@ void Show(char board[][ROWS], int row, int col){
 		for (int i = 1; i <= ROW;i++) {
 			printf("%d ", i);
 		}
+		printf("\n");
 		for (int j = 0; j < ROWS;j++) {
 			printf("%d ", j + 1);
 			printf("%d ", board[i+1][j+1]);
