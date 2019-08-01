@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game,h.h">
+    <ClInclude Include="game.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
