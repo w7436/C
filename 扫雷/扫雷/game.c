@@ -11,7 +11,7 @@ void menu(){
 void Show(char board[][ROWS], int row, int col){
 	int i = 0; 
 	int j = 0;
-	printf("-----------------------------\n");
+	printf("---------------------------\n");
 	for (i = 0; i <= row;i++) {
 		printf("%d ", i);
 	}
@@ -23,7 +23,7 @@ void Show(char board[][ROWS], int row, int col){
 		}
 		printf("\n");
 	}
-	printf("---------------------------\n");
+	printf("--------------------------\n");
 }
 //ÆåÅÌ³õÊ¼»¯
 void InitBoard(char board[][ROWS], int row, int col, char set) {
