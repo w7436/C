@@ -18,4 +18,9 @@ void Show(char board[][ROWS], int row, int col);
 void SetMine(char mine[][ROWS], int row, int col);
 //找雷
 void FindMine(char mine[][ROWS], char mineInfo[][ROWS], int row, int col);
+//如果未踩到雷，对信息进行显示
+void Show_area(char mineInfo[][ROWS], char mine[][ROWS], int x, int y);
 
+void Game();
+
+void menu();
