@@ -106,6 +106,8 @@ void Game() {
 	InitBoard(mine, ROWS, COLS, '0'); //初始化棋盘
 	InitBoard(mineInfo, ROWS, COLS,'*');//展示给玩家
 	Show(mineInfo, ROW, COL);//打印
+	
 	SetMine(mine, ROW, COL);//设置雷
+	Show(mine, ROW, COL);
 	FindMine(mine, mineInfo, ROW, COL);//找雷 
 }

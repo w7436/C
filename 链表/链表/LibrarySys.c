@@ -38,7 +38,6 @@ void SListPushBack(SList *s) {
 		cur = cur->next;
 	}
 	cur->next = node;						//cur->next一定是NULL,也就是最后一个结点
-	
 }
 void Menu() {
 	printf("******************************************************************************************");
