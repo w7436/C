@@ -3,32 +3,62 @@
 #include <malloc.h>
 #include <assert.h>
 
-//链表的初始化
-void SListInit(SList *s) {
-	assert(s != NULL);   //如果其后的条件为假，则终止程序
-	s->pHead = NULL;
+//初始化 
+void SListInit(SList* s) {
+	assert (s!=NULL);
+	s->first = NULL;
+}
+//头插
+void SListPushFront(SList *s, SLTDataType v) {
+	Node *node = (Node *)malloc(sizeof(Node)); //申请的内存
+	node->value = v;
+	node->next = s->first;
+	s->first = node;
 }
 //尾插
-void  SListPushBack(SList* s, int data) {
-	assert(s != NULL);
-	Node *node = (Node*)malloc(sizeof(Node));  //动态内存分配
+void slistPushBack(SList *s,SLTDataType v) {
+	Node* node = (Node *)malloc(sizeof(Node));
+	node->value = v;
 	node->next = NULL;
-	node->value = data;
-
-	if (s->pHead==NULL) {   //空链表
-		s->pHead = node;
-		return; 
+	//链表为空的情况
+	if (s->first==NULL) {
+		
+		s->first = node;
 	}
-	Node *cur = s->pHead;
-	while (cur->next != NULL) {
+	//链表不为空的情况
+	//找到最后一个结点,链表中一定有节点
+	Node *cur = s->first;
+	while (cur->next!=NULL)
+	{
 		cur = cur->next;
 	}
-	//这里的cur为最后一个元素
+	//cur 为最后一个结点
 	cur->next = node;
 }
-//删除链表中最后一个结点
-void SListPopBack(SList* s) {
-	assert(s != NULL);   //如果其后的条件为假，则终止程序
-	assert(s->pHead!= NULL);
-	Node *node = (Node*)malloc(sizeof(Node));  //动态内存分配
+//头删
+void SListPopFront(SList *s) {
+	assert(s != NULL);  //不能没有链表
+	assert(s->first != NULL);  //不能没有结点
+	//存储结点
+	Node *next = s->first->next;
+	//释放内存
+	free(s->first);
+	s->first = next;
+}
+//尾删
+void SListPopBack(SList *s) {
+	assert(s != NULL);  //不能没有链表
+	assert(s->first != NULL);  //不能没有结点
+	//链表只有一个结点
+	if (s->first->next == NULL) {
+		free(s->first);
+		s->first = NULL;
+	}
+	Node *cur = s->first;
+	while (cur->next->next != NULL) {
+		cur = cur->next;
+	}
+	//cur为倒数第二个结点
+	free(cur->next);
+	cur->next = NULL;
 }
