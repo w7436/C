@@ -9,7 +9,7 @@ void Bubblesort(int arr[],int len) {
 	{
 		int j = 0;
 		flg = 0;//每一趟进来必须置为0
-		for (j = 0; j < len - 1 - i; j++)
+		for (j = 0; j < len-1- i; j++)
 		{
 			if (arr[j] > arr[j + 1])
 			{
@@ -62,7 +62,7 @@ void Show(int arr[], int len) {
 	}
 }
 int main() {
-	int arr[] = { 6,5,4,3,2,1 };
+	int arr[] = {3,0,5 };
 	int len = sizeof(arr) / sizeof(arr[0]);
 	Bubblesort(arr, len);
 	Show(arr, len);
