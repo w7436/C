@@ -61,6 +61,109 @@ void SeqListFrontBack(SeqList* pSeqlist, int value) {
 	pSeqlist->size++;
 
 }
+//尾删
+void SeqListPopBack(SeqList *ps) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	ps->size--;
+}
+
+//头删
+void SeqListPopFront(SeqList *ps) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	for (int i = 0; i < ps->size - 1; i++) {
+		ps->array[i] = ps->array[i + 1];
+	}
+	ps->size--;
+}
+
+//任意位置的插入
+void SeqListInsert(SeqList *ps, int pos, int data) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	for (int i = ps->size - 1; i > pos - 1; i--) {
+		ps->array[i] = ps->array[i - 1];
+	}
+	ps->array[pos - 1] = data;
+	ps->size++;
+}
+
+//任意位置的删除
+void SeqListErase(SeqList *ps, int pos) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	for (int i = pos - 1; i < size; i++) {
+		ps->array[i - 1] = ps->array[i];
+	}
+	ps->size--;
+}
+
+
+// 检测data是否在顺序表中 
+int SeqListFind(SeqList *ps, int data) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	for (int i = 0; i < ps->size; i++) {
+		if (ps->array[i] == data) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+//删除顺序表中数为data的元素
+void SeqListRemove(SeqList *ps, int data) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	for (int i = 0; i < ps->size; i++) {
+		if (ps->array[i] == data) {
+			for (int j = i; j < ps->size - 1; j++) {
+				ps->array[j] = ps->array[j + 1];
+			}
+			ps->size--;
+			return;
+		}
+	}
+	return;
+}
+
+// 移除顺序表中所有值为data的元素
+void SeqListRemoveAll(SeqList *ps, int data) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	for (int i = 0; i < ps->size; ++i) {
+		if (ps->array[i] == data) {
+			for (int j = i; j < ps->size - 1; ++j) {
+				ps->array[j] = ps->array[j + 1];
+			}
+			--i;
+			ps->size--;
+		}
+	}
+	return;
+}
+
+
+//扩容
+void SeqListBiger(SeqList *ps) {
+	assert(ps != NULL);
+	assert(ps->array != NULL);
+
+	int* a = (int*)malloc(sizeof(int) * ps->capacity * 2);
+	for (int i = 0; i < ps->size; ++i) {
+		a[i] = ps->array[i];
+	}
+	ps->array = a;
+	ps->capacity *= 2;
+}
 
 
 
