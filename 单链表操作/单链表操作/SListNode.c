@@ -62,3 +62,29 @@ void SListPopBack(SList *s) {
 	free(cur->next);
 	cur->next = NULL;
 }
+
+//求倒数第k个结点
+Node *LastNode(SList *plist,int k) {
+	//创建两个指针
+	Node *p = plist;
+	Node *q = plist;
+
+	//让p结点走k-1步
+	while (k-1>0) {
+		if (p->next != NULL) {
+			p = p->next;
+			k--;
+		}
+		else
+		{
+			printf("无此结点！");
+			break;
+		}
+	}
+	//两个同时走，从而确定q的结点
+	while (p->next != NULL) {
+		q = q->next;
+		p = p->next;
+	}
+	return q;
+}
