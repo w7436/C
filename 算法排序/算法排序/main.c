@@ -130,7 +130,7 @@ void shell_sort(int a[], int n)
 
 
 
-//¹é²¢ÅÅÐò
+//5.¹é²¢ÅÅÐò
 void dealMergeSort(int *arr, int *tmp, int start, int end) {
 	if (start >= end) {
 		return;
@@ -166,6 +166,7 @@ void dealMergeSort(int *arr, int *tmp, int start, int end) {
 	}
 
 }
+
 void mergeSort(int *arr,int n) {
 
 	int *tmp = (int *)malloc(n * sizeof(int));
